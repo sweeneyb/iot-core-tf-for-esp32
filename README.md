@@ -11,12 +11,12 @@ terraform apply
 ```
 
 ### Outputs
-As a convenience, an output named cloud-config is generated that should be used as the *google_cloud_config* block in config.py.
+As a convenience, an output named cloud-config is generated that should be used as the `google_cloud_config` block in config.py.
 
 The code will also generate & preload the device certificates into the device registry.  So you'll need to run this terraform before making edits to your config.py file.  You'll need to grab private key off the command line, move it into your iot-core-micropython project root, and run utils/decode_rsa.py.  If anyone has insight into how to make those numbers from the private key, I'll update this repo to make that easier.
 
 ## Verifying it works
-Assuming your apply is clean, and your esp32 is running, you'll want to see it working.  There is a subscription named '''cli-verify''' for just that.  
+Assuming your apply is clean, and your esp32 is running, you'll want to see it working.  There is a subscription named `cli-verify` for just that.  
 
 ```
 gcloud config set project $(terraform output project-id)
